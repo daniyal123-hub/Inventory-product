@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment Cover Page & Submission Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .page {
+      max-width: 850px;
+      margin: 0 auto 40px auto;
+      background: var(--card-bg);
+      padding: 60px 50px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .cover-border {
+      border: 2px solid #cbd5e1;
+      padding: 40px;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .header-logo-area {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .uni-emblem {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary), #818cf8);
+      color: white;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    .uni-name {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #1e1b4b;
+      text-transform: uppercase;
+    }
+
+    .dept-name {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .divider {
+      height: 3px;
+      background: linear-gradient(to right, transparent, var(--primary), transparent);
+      margin: 30px 0;
+    }
+
+    .assignment-meta {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .assignment-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: #eef2ff;
+      color: var(--primary);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .assignment-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .assignment-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .submission-grid {
+      margin-top: 50px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .grid-row {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .grid-row:last-child {
+      border-bottom: none;
+    }
+
+    .grid-label {
+      width: 35%;
+      padding: 14px 20px;
+      background: #f1f5f9;
+      font-size: 13px;
+      font-weight: 700;
+      color: #334155;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border-right: 1px solid var(--border);
+    }
+
+    .grid-value {
+      width: 65%;
+      padding: 14px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .edit-prompt {
+      color: #94a3b8;
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    .cover-footer {
+      margin-top: 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed var(--border);
+      padding-top: 25px;
+    }
+
+    .sign-box {
+      text-align: center;
+      width: 180px;
+    }
+
+    .sign-line {
+      border-bottom: 1px solid #94a3b8;
+      height: 35px;
+      margin-bottom: 8px;
+    }
+
+    .sign-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Print Break for screenshots section */
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    .section-heading {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .screenshot-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 30px;
+    }
+
+    .screenshot-caption {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .caption-tag {
+      font-size: 11px;
+      background: #e2e8f0;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .screenshot-img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      display: block;
+    }
+
+    .print-bar {
+      max-width: 850px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+
+    .print-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .print-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+      }
+      .print-bar {
+        display: none !important;
+      }
+      .page {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+      }
+      .page-break {
+        page-break-before: always;
+        break-before: page;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar for Student -->
+  <div class="print-bar">
+    <div>
+      <strong>Assignment Cover Page & Submission Kit</strong>
+      <span style="font-size: 12px; color: var(--text-muted); margin-left: 8px;">(Editable in browser before printing)</span>
+    </div>
+    <button class="print-btn" onclick="window.print()">
+      🖨️ Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- Page 1: Official Assignment Cover Page -->
+  <div class="page">
+    <div class="cover-border">
+      <div class="header-logo-area">
+        <div class="uni-emblem">🎓</div>
+        <h1 class="uni-name" contenteditable="true">Department of Computer Science</h1>
+        <p class="dept-name" contenteditable="true">Faculty of Information Technology & Software Engineering</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="assignment-meta">
+        <span class="assignment-tag">Laboratory Project Assignment</span>
+        <h2 class="assignment-title">Product & Inventory Dashboard</h2>
+        <p class="assignment-subtitle">React.js Functional Components, Controlled Forms & Real-time Live Filtering</p>
+      </div>
+
+      <div class="submission-grid">
+        <div class="grid-row">
+          <div class="grid-label">University</div>
+          <div class="grid-value" contenteditable="true"><span class="edit-prompt">[Enter Your University Name]</span></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-label">Assignment Title</div>
+          <div class="grid-value">Product & Inventory Dashboard</div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-label">Student Name</div>
+          <div class="grid-value" contenteditable="true"><span class="edit-prompt">[Enter Your Full Name]</span></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-label">Roll Number</div>
+          <div class="grid-value" contenteditable="true"><span class="edit-prompt">[Enter Your Roll / Registration Number]</span></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-label">Section</div>
+          <div class="grid-value" contenteditable="true"><span class="edit-prompt">[Enter Your Section / Batch]</span></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-label">Submitted To</div>
+          <div class="grid-value" contenteditable="true"><span class="edit-prompt">[Enter Professor / Instructor's Name]</span></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-label">Submission Date</div>
+          <div class="grid-value" contenteditable="true">November 2, 2026</div>
+        </div>
+      </div>
+
+      <div class="cover-footer">
+        <div class="sign-box">
+          <div class="sign-line"></div>
+          <div class="sign-label">Student Signature</div>
+        </div>
+        <div class="sign-box">
+          <div class="sign-line"></div>
+          <div class="sign-label">Evaluator Signature</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 2: Required Demonstration Screenshots -->
+  <div class="page page-break">
+    <h2 class="section-heading">Application Screenshots & Proof of Execution</h2>
+    <p class="section-desc">Printed demonstration showing the three required views for assignment evaluation.</p>
+
+    <!-- 1. Main Dashboard View -->
+    <div class="screenshot-card">
+      <div class="screenshot-caption">
+        <span>1. Main Dashboard View</span>
+        <span class="caption-tag">Navbar, Metrics, Controlled Form & 5 Initial Products</span>
+      </div>
+      <img src="screenshots/screenshot-1-main-dashboard.png" alt="Main Dashboard View" class="screenshot-img">
+    </div>
+
+    <!-- 2. Search Filtered View -->
+    <div class="screenshot-card">
+      <div class="screenshot-caption">
+        <span>2. Search Filtered View</span>
+        <span class="caption-tag">Live Real-time Filtering by Name / Category</span>
+      </div>
+      <img src="screenshots/screenshot-2-search-filtered.png" alt="Search Filtered View" class="screenshot-img">
+    </div>
+
+    <!-- 3. Code Structure -->
+    <div class="screenshot-card">
+      <div class="screenshot-caption">
+        <span>3. Project Code & Folder Structure</span>
+        <span class="caption-tag">Component-Based Architecture</span>
+      </div>
+      <img src="screenshots/screenshot-3-code-structure.png" alt="Code Structure" class="screenshot-img">
+    </div>
+  </div>
+
+</body>
+</html>
